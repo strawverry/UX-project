@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe: if it's not 3 3 3...</title>
+    <link rel="stylesheet" href="tictac.css">
+ 
+</head>
+<body>
+    <main>
+        <header id="header">
+            <div class="player player-active" id="x" onclick="choosePlayer('X')">
+                X
+            </div>
+            <h2 id="titleHeader">X or O</h2>
+            <div class="player" id="o" onclick="choosePlayer('O')">
+                O
+            </div>
+        </header>
+  
+    <div id="square">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <button id="startAgainbtn">Start Again</button>
+</main>
+<script src="gamejs.js"></script>
+</body>
+</html>

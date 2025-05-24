@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    user-select: none;
+    color: rgb(235, 248, 246);
+}
+main{
+    background-color:#0c0325;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#header{
+    display: flex;
+    width:400px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+#header .player{
+    background: #5b44b9;
+    width: 80px;
+    height: 80px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 12px;
+    border:solid 4px #5b44b9;
+
+}
+
+#header .player:hover{
+    border:solid 4px #b6b1cb;
+}
+
+
+#titleHeader{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+#header .player-active{
+    opacity:1;
+}
+
+#header #x{
+    color:#ffffff;
+}
+
+#header #o{
+    color: #ffea00;
+}
+
+#square{
+    display: grid;
+    grid-template-columns: repeat(3,70px);
+    grid-template-rows: repeat(3,70px);
+}
+
+#square .cell{
+    background: #472fa4;
+    border-radius: 12px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition:0.3s background;
+    font-weight: bold;
+
+}
+#square .cell:hover{
+   background:#351c9a;
+}
+
+#h1{
+    margin-top:0;
+    margin:10px;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffea00;
+}
+#startAgainbtn{
+    margin-top: 40px;
+    padding:15px;
+    color:white;
+    background:#0eb018;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width:200px;
+    visibility: hidden;
+}
+
+#startAgainbtn:hover{
+    background: #1d8b24;
+}
+
+#startAgainbtn:active {
+    transform: scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #header .player {
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
+    }
+
+    #titleHeader {
+        font-size: 1.5rem;
+    }
+
+    #square {
+        grid-template-columns: repeat(3, 50px);
+        grid-template-rows: repeat(3, 50px);
+        gap: 8px;
+    }
+
+    #square .cell {
+        font-size: 28px;
+    }
+
+    #startAgainbtn {
+        font-size: 18px;
+        width: 180px;
+        padding: 12px;
+    }
+
+    #h1 {
+        font-size: 1.8rem;
+    }
+}
