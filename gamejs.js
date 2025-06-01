@@ -8,7 +8,7 @@ const winSound = new Audio('win.wav');
 const tapSound = new Audio('tap.wav');
 const drawSound = new Audio('draw.wav');
 const loseSound = new Audio('lose.mp3');
-
+const clickSound = new Audio('click.wav');
 
 // Initialize variables for the game
 let computerPlayer = 'X'
@@ -20,6 +20,7 @@ tapSound.volume=1;
 winSound.volume = 0.5;
 loseSound.volume=0.5;
 drawSound.volume=0.7;
+clickSound.volume=0.5;
 
 // Array of win conditions
 const inputCells = ['', '', '',
@@ -119,8 +120,9 @@ function declareWinner(winningIndices) {
         titleHeader.style.fontSize = '2rem';
         titleHeader.textContent = `${player} Wins`;
         titleHeader.style.color = '#92ea18';
-        restartBtn.style.backgroundColor = '#92ea18';
-        restartBtn.textContent = 'Play Again';
+        restartBtn.style.backgroundColor = '#035609';
+        restartBtn.textContent = 'Play Again!';
+       
        
     } else {
         loseSound.play()
@@ -128,7 +130,7 @@ function declareWinner(winningIndices) {
         titleHeader.textContent = `${computerPlayer} Loses`;
         titleHeader.style.color = '#FF0000';
         restartBtn.style.backgroundColor = '#FF0000';
-        restartBtn.textContent = 'Try Again';
+        restartBtn.textContent = 'Try Again!';
     }
 
     isPauseGame = true;
@@ -140,11 +142,12 @@ function declareWinner(winningIndices) {
     restartBtn.style.visibility = 'visible';
 }
 
-
-
 function declareDraw() {
     drawSound.play()
     titleHeader.textContent = 'Draw!';
+    titleHeader.style.color = '#FFA500';
+    restartBtn.style.backgroundColor = '#FFA500';
+    restartBtn.textContent = 'Try Again!';
     titleHeader.style.fontSize = '2rem';
     isPauseGame = true;
     restartBtn.style.visibility = 'visible';
@@ -179,6 +182,7 @@ function choosePlayer(selectedPlayer) {
 }
 
 restartBtn.addEventListener('click', () => {
+    clickSound.play()
     restartBtn.style.visibility = 'hidden';
     inputCells.fill('')
     cells.forEach(cell => {
@@ -192,8 +196,4 @@ restartBtn.addEventListener('click', () => {
     titleHeader.style.color = '#ffffff';
     oPlayerDisplay.style.backgroundColor='#5b44b9'
     xPlayerDisplay.style.backgroundColor='#5b44b9'
-
-
-
-
 })

@@ -13,6 +13,7 @@ main{
     align-items: center;
     justify-content: center;
 }
+
 #header{
     display: flex;
     width:400px;
@@ -90,7 +91,7 @@ main{
     margin-top: 40px;
     padding:15px;
     color:white;
-    background:#0eb018;
+    background:#035609;
     font-size: 20px;
     font-weight: bold;
     border-radius: 12px;
@@ -102,47 +103,34 @@ main{
 }
 
 #startAgainbtn:hover{
-    background: #1d8b24;
+    background: #1b9223;
 }
 
 #startAgainbtn:active {
     transform: scale(1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    #header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    #header .player {
-        width: 60px;
-        height: 60px;
-        font-size: 32px;
-    }
-
+@media (max-width: 480px) {
     #titleHeader {
+        font-size: 1.2rem;
+    }
+
+    .cell {
         font-size: 1.5rem;
     }
 
-    #square {
-        grid-template-columns: repeat(3, 50px);
-        grid-template-rows: repeat(3, 50px);
-        gap: 8px;
-    }
-
-    #square .cell {
-        font-size: 28px;
-    }
-
     #startAgainbtn {
-        font-size: 18px;
-        width: 180px;
-        padding: 12px;
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 
-    #h1 {
-        font-size: 1.8rem;
+    .player-display {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #x, #o {
+        margin: 5px 0;
+        width: 80%;
     }
 }
